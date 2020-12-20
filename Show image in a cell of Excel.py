@@ -9,4 +9,3 @@ sheet['A1'] = 'This is a picture'
 
 sheet.add_image(img, 'A1')
 
-book.save("demo.xlsx")
