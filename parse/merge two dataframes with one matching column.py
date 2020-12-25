@@ -25,5 +25,8 @@ display(df2)
 # df3 = df3.rename(columns = {'index':'aa'})
 # display(df3)
 
-df3 = df1.merge(df2,how='left')
+df3 = df1.merge(df2, how='left')
+df3 = df3.reindex(sorted(df3.columns), axis=1)
+
+df3 = df3[['ac', 'aa', 'ab']]
 display(df3)
