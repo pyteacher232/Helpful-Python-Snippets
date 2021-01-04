@@ -18,12 +18,10 @@ data_sales = pd.DataFrame(sales_dict)
 ref_data = data_sales[data_sales.colour == 'Blue'][['sales', 'product']]
 ref_data = ref_data.rename(columns={"sales": "sales_1"})
 
-data_gby = data_sales.groupby(['colour'], as_index=True)
-
 def make_color(d, ref_data):
-    d['sale_1'] = d['sales'] - 1
+    # d['sales_2'] = d['sales'] - 1
     d = d.merge(ref_data, how='inner', on='product')
     return d
 
-data_colour = data_sales.groupby(['colour']).apply(lambda x: make_color(x, ref_data))
+data_colour = data_sales.groupby('colour').apply(lambda x: make_color(x, ref_data))
 print(data_colour)
