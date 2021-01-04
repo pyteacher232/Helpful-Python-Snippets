@@ -8,6 +8,6 @@ df = pd.DataFrame({
     'col4': ['a', 'B', 'c', 'D', 'e', 'F']
 })
 
-df = df.sort_values(by=['col1'])
+df = df.sort_values(by=['col1'], inplace=True)
 
 print(df)
