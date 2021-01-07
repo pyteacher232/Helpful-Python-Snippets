@@ -33,7 +33,7 @@ class WinForm(QWidget):
         self.label.setText(timeDisplay)
 
     def startTimer(self):
-        self.timer.start(1000)
+        self.timer.start(10)
         self.startBtn.setEnabled(False)
         self.endBtn.setEnabled(True)
 
