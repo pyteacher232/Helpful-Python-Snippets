@@ -14,7 +14,7 @@ class RequestRunnable(QRunnable):
 
     def run(self):
         r = requests.post(self.mUrl, json=self.mJson)
-        QThread.msleep(1000)
+        # QThread.msleep(1000)
         QMetaObject.invokeMethod(self.w, "setData",
                                  Qt.QueuedConnection,
                                  Q_ARG(str, r.text))
